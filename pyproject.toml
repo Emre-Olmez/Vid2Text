@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vid2text"
+version = "0.1.0"
+description = "Drag-and-drop Turkish audio and video transcription with Whisper."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "gradio>=5.0.0,<6.0.0",
+    "moviepy>=1.0.3,<2.0.0",
+    "openai-whisper",
+]
+
+[project.scripts]
+vid2text-cli = "vid2text.cli:main"
+vid2text-ui = "vid2text.ui:launch"
+
+[tool.setuptools]
+packages = ["vid2text"]
